@@ -11,19 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('product_details', function (Blueprint $table) {
+        Schema::create('product_sliders', function (Blueprint $table) {
             $table->id();
-            $table->string('img1');
-            $table->string('img2');
-            $table->string('img3');
-            $table->string('img4');
-           
-            $table->longText('des');
-            $table->string('color');
-            $table->string('size');
+            $table->string('title');
+            $table->string('short_des');
+            $table->string('price');
+            $table->string('image');
 
-     // akta product_id ar agnist a ak tai product delails thakbe  tai unique hobe
-     
+            // akta product_id agnist a aktai product slider thakbe
             $table->unsignedBigInteger('product_id')->unique();
             $table->foreign('product_id')->references('id')->on('products')->restrictOnDelete()->cascadeOnUpdate();
 
@@ -36,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('product_details');
+        Schema::dropIfExists('product_sliders');
     }
 };
