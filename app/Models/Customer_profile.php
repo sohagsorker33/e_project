@@ -26,7 +26,9 @@ class Customer_profile extends Model
         'ship_country',
         'ship_phone',
         'user_id'
-     
-
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
