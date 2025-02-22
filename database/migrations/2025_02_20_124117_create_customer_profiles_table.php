@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('customer_profiles', function (Blueprint $table) {
             $table->id();
+
+       // customer details
+
             $table->string('cus_name');
             $table->string('cus_add');
             $table->string('cus_city');
@@ -21,6 +24,8 @@ return new class extends Migration
             $table->string('cus_country');
             $table->string('cus_phone');
             $table->string('cus_fax');
+
+       // shipping details
 
             $table->string('ship_name');
             $table->string('ship_add');
